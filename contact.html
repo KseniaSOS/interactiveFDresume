@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rosie</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("5XHUUoIlBYmZ-xD3T");
+            
+            var templateParams = {
+                        name: 'Ksenia',
+                        notes: 'Check this out!'
+                        };
+
+            emailjs.send('service_wny1wk2','rosie', templateParams)
+	                .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        }, function(err) {
+                            console.log('FAILED...', err);
+                        	});
+        })();
+    </script>
 </head>
 <body>
     <header>
